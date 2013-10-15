@@ -2,7 +2,7 @@
 
 Name:		yle-dl
 Version:	2.1.0
-Release:	0.2.git%{gitver}%{?dist}
+Release:	0.3.git%{gitver}%{?dist}
 License:	GPLv2
 Summary:	Command-line tool to download videos from Finnish broadcasting company
 Group:		Applications/Multimedia
