@@ -2,7 +2,7 @@
 
 Name:		yle-dl
 Version:	2.1.0
-Release:	0.1.git%{gitver}%{?dist}
+Release:	0.2.git%{gitver}%{?dist}
 License:	GPLv2
 Summary:	Command-line tool to download videos from Finnish broadcasting company
 Group:		Applications/Multimedia
@@ -47,6 +47,9 @@ rm -rf %{buildroot}
 
 
 %changelog
+* Tue Oct 10 2013 Juha Tuomala <tuju@iki.fi> 2.1.0-0.2.git51f30c8
+- bump for build.
+
 * Fri Oct 10 2013 Juha Tuomala <tuju@iki.fi> 2.1.0-0-g51f30c8
 - Update to 2.1.0-git51f30c8.
 
