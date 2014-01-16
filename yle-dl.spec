@@ -1,12 +1,13 @@
+%global		gitver	51f30c8
 
 Name:		yle-dl
-Version:	2.0.1
-Release:	3%{?dist}
+Version:	2.1.0
+Release:	0.3.git%{gitver}%{?dist}
 License:	GPLv2
 Summary:	Command-line tool to download videos from Finnish broadcasting company
 Group:		Applications/Multimedia
 Url:		http://users.tkk.fi/~aajanki/rtmpdump-yle/
-Source0:	http://users.tkk.fi/~aajanki/rtmpdump-yle/%{name}-%{version}.tar.gz
+Source0:	http://users.tkk.fi/~aajanki/rtmpdump-yle/%{name}-%{version}-0-g%{gitver}.tar.gz
 
 BuildRequires:	openssl-devel, json-c-devel, python-devel
 Requires:		rtmpdump, python-crypto
@@ -24,7 +25,7 @@ boxee.
 
 
 %prep
-%setup -q -n %{name}-%{version}
+%setup -q -n aajanki-yle-dl-%{gitver}
 
 
 %install
@@ -46,6 +47,12 @@ rm -rf %{buildroot}
 
 
 %changelog
+* Tue Oct 10 2013 Juha Tuomala <tuju@iki.fi> 2.1.0-0.2.git51f30c8
+- bump for build.
+
+* Fri Oct 10 2013 Juha Tuomala <tuju@iki.fi> 2.1.0-0-g51f30c8
+- Update to 2.1.0-git51f30c8.
+
 * Sun Aug 08 2012 Juha Tuomala <tuju@iki.fi> 2.0.1-3
 - Minor pkg cleanups.
 
