@@ -1,7 +1,7 @@
 
 Name:		yle-dl
 Version:	2.0.1
-Release:	3%{?dist}
+Release:	4%{?dist}
 License:	GPLv2
 Summary:	Command-line tool to download videos from Finnish broadcasting company
 Group:		Applications/Multimedia
@@ -46,6 +46,9 @@ rm -rf %{buildroot}
 
 
 %changelog
+* Sun Aug 31 2014 Sérgio Basto <sergio@serjux.com> - 2.0.1-4
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_21_22_Mass_Rebuild
+
 * Sun Aug 08 2012 Juha Tuomala <tuju@iki.fi> 2.0.1-3
 - Minor pkg cleanups.
 
