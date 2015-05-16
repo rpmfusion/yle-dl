@@ -1,6 +1,6 @@
 Name:		yle-dl
-Version:	2.7.0
-Release:	2%{?dist}
+Version:	2.7.1
+Release:	1%{?dist}
 License:	GPLv2
 Summary:	Command-line tool to download videos from Finnish broadcasting company
 Group:		Applications/Multimedia
@@ -9,7 +9,7 @@ Url:		http://aajanki.github.io/yle-dl/
 Source0:    http://github.srcurl.net/aajanki/%{name}/%{version}/%{name}-%{version}.tar.gz
 Source1:    https://raw.githubusercontent.com/K-S-V/Scripts/master/AdobeHDS.php
 
-BuildRequires:	openssl-devel, json-c-devel, python-devel
+BuildRequires:	sed
 Requires:		rtmpdump, python-crypto, php
 BuildArch:		noarch
 
@@ -51,6 +51,10 @@ make DESTDIR=%{buildroot} prefix=%{_usr}  install-adobehds
 
 
 %changelog
+* Sat May 16 2015 Sérgio Basto <sergio@serjux.com> - 2.7.1-1
+- Update to 2.7.1 .
+- Update BuildRequires .
+
 * Tue May 12 2015 Sérgio Basto <sergio@serjux.com> - 2.7.0-2
 - Include file named AdobeHDS.php , instead download it every build.
 
