@@ -1,5 +1,5 @@
 Name:		yle-dl
-Version:	2.7.2
+Version:	2.8.1
 Release:	1%{?dist}
 License:	GPLv2
 Summary:	Command-line tool to download videos from Finnish broadcasting company
@@ -51,6 +51,9 @@ make DESTDIR=%{buildroot} prefix=%{_usr}  install-adobehds
 
 
 %changelog
+* Tue Sep 22 2015 Sérgio Basto <sergio@serjux.com> - 2.8.1-1
+- Update to 2.8.1 and AdobeHDS.php also updated
+
 * Sun Jun 07 2015 Sérgio Basto <sergio@serjux.com> - 2.7.2-1
 - Update to 2.7.2 .
 - Update Requires dependencies .
