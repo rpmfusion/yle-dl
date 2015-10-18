@@ -1,6 +1,6 @@
 Name:		yle-dl
 Version:	2.8.1
-Release:	1%{?dist}
+Release:	2%{?dist}
 License:	GPLv2
 Summary:	Command-line tool to download videos from Finnish broadcasting company
 Group:		Applications/Multimedia
@@ -10,7 +10,7 @@ Source0:    http://github.srcurl.net/aajanki/%{name}/%{version}/%{name}-%{versio
 Source1:    https://raw.githubusercontent.com/K-S-V/Scripts/master/AdobeHDS.php
 
 BuildRequires:	sed
-Requires:		rtmpdump, python-crypto, php-cli, php-bcmath, php-xml
+Requires:		rtmpdump python-crypto php-cli php-bcmath php-xml php-mcrypt
 BuildArch:		noarch
 
 #global commit 158c026271198696a7a329b3c2de3e2197de3e25
@@ -51,6 +51,9 @@ make DESTDIR=%{buildroot} prefix=%{_usr}  install-adobehds
 
 
 %changelog
+* Sun Oct 18 2015 Sérgio Basto <sergio@serjux.com> - 2.8.1-2
+- Added to Requires php-mcrypt
+
 * Tue Sep 22 2015 Sérgio Basto <sergio@serjux.com> - 2.8.1-1
 - Update to 2.8.1 and AdobeHDS.php also updated
 
