@@ -1,13 +1,11 @@
 Name:		yle-dl
-Version:	2.8.1
-Release:	2%{?dist}
+Version:	2.9.0
+Release:	1%{?dist}
 License:	GPLv2
 Summary:	Command-line tool to download videos from Finnish broadcasting company
 Group:		Applications/Multimedia
 Url:		http://aajanki.github.io/yle-dl/
-#Source0:   https://github.com/aajanki/%{name}/archive/%{name}-%{version}.tar.gz
-Source0:    http://github.srcurl.net/aajanki/%{name}/%{version}/%{name}-%{version}.tar.gz
-Source1:    https://raw.githubusercontent.com/K-S-V/Scripts/master/AdobeHDS.php
+Source0:   https://github.com/aajanki/%{name}/archive/%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
 BuildRequires:	sed
 Requires:		rtmpdump python-crypto php-cli php-bcmath php-xml php-mcrypt
@@ -39,9 +37,6 @@ rm -rf %{buildroot}
 mkdir -p %{buildroot}/%{_docdir}
 mkdir -p %{buildroot}/%{_datadir}/%{name}
 make DESTDIR=%{buildroot} prefix=%{_usr}  install
-install -m 0644 -D %{SOURCE1} \
-    %{buildroot}/%{_datadir}/%{name}
-make DESTDIR=%{buildroot} prefix=%{_usr}  install-adobehds
 
 %files
 %defattr(-,root,root)
@@ -51,6 +46,10 @@ make DESTDIR=%{buildroot} prefix=%{_usr}  install-adobehds
 
 
 %changelog
+* Wed Nov 18 2015 Sérgio Basto <sergio@serjux.com> - 2.9.0-1
+- Update yle-dl to 2.9.0
+- adobehds is no longer needed
+
 * Sun Oct 18 2015 Sérgio Basto <sergio@serjux.com> - 2.8.1-2
 - Added to Requires php-mcrypt
 
