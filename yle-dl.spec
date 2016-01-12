@@ -1,11 +1,11 @@
 Name:		yle-dl
-Version:	2.9.0
+Version:	2.10.0
 Release:	1%{?dist}
 License:	GPLv2
 Summary:	Command-line tool to download videos from Finnish broadcasting company
 Group:		Applications/Multimedia
 Url:		http://aajanki.github.io/yle-dl/
-Source0:   https://github.com/aajanki/%{name}/archive/%{version}.tar.gz#/%{name}-%{version}.tar.gz
+Source0:   https://github.com/aajanki/%{name}/archive/%{version}/%{name}-%{version}.tar.gz
 
 BuildRequires:	sed
 Requires:		rtmpdump python-crypto php-cli php-bcmath php-xml php-mcrypt
@@ -46,6 +46,9 @@ make DESTDIR=%{buildroot} prefix=%{_usr}  install
 
 
 %changelog
+* Tue Jan 12 2016 Sérgio Basto <sergio@serjux.com> - 2.10.0-1
+- Update yle-dl to 2.10.0
+
 * Wed Nov 18 2015 Sérgio Basto <sergio@serjux.com> - 2.9.0-1
 - Update yle-dl to 2.9.0
 - adobehds is no longer needed
