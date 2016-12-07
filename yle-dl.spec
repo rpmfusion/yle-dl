@@ -1,5 +1,5 @@
 Name:		yle-dl
-Version:	2.10.2
+Version:	2.13
 Release:	1%{?dist}
 License:	GPLv2
 Summary:	Command-line tool to download videos from Finnish broadcasting company
@@ -46,6 +46,9 @@ make DESTDIR=%{buildroot} prefix=%{_usr}  install
 
 
 %changelog
+* Wed Dec 07 2016 Sérgio Basto <sergio@serjux.com> - 2.13-1
+- Update to 2.13
+
 * Sat Jul 23 2016 Sérgio Basto <sergio@serjux.com> - 2.10.2-1
 - Update yle-dl 2.10.2
 
