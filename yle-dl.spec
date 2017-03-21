@@ -1,6 +1,6 @@
 Name:		yle-dl
 Version:	2.13
-Release:	1%{?dist}
+Release:	2%{?dist}
 License:	GPLv2
 Summary:	Command-line tool to download videos from Finnish broadcasting company
 Group:		Applications/Multimedia
@@ -46,6 +46,9 @@ make DESTDIR=%{buildroot} prefix=%{_usr}  install
 
 
 %changelog
+* Tue Mar 21 2017 RPM Fusion Release Engineering <kwizart@rpmfusion.org> - 2.13-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_26_Mass_Rebuild
+
 * Wed Dec 07 2016 Sérgio Basto <sergio@serjux.com> - 2.13-1
 - Update to 2.13
 
