@@ -1,18 +1,25 @@
 Name:		yle-dl
-Version:	2.13
-Release:	3%{?dist}
-License:	GPLv2
+Version:	2.24
+Release:	1%{?dist}
+License:	GPLv3
 Summary:	Command-line tool to download videos from Finnish broadcasting company
-Group:		Applications/Multimedia
-Url:		http://aajanki.github.io/yle-dl/
-Source0:   https://github.com/aajanki/%{name}/archive/%{version}/%{name}-%{version}.tar.gz
+URL:		http://aajanki.github.io/yle-dl/
+Source0:    https://github.com/aajanki/%{name}/archive/%{version}/%{name}-%{version}.tar.gz
 
+BuildRequires:	python2-devel
+BuildRequires:	python2-setuptools
 BuildRequires:	sed
-Requires:		rtmpdump python-crypto php-cli php-bcmath php-xml php-mcrypt
-BuildArch:		noarch
+Requires:		rtmpdump
+Requires:		python2-crypto
+Requires:		python2-requests
+Requires:		python-progress
+Requires:		python2-lxml
+Requires:		php-cli
+Requires:		php-bcmath
+Requires:		php-xml
+Requires:		php-mcrypt
 
-#global commit 158c026271198696a7a329b3c2de3e2197de3e25
-#global shortcommit %(c=%{commit}; echo ${c:0:7})
+BuildArch:		noarch
 
 %description
 yle-dl is a command-line program for downloading media files
@@ -27,25 +34,29 @@ boxee.
 
 
 %prep
-%setup -q
+%autosetup
+sed -i -e 's@/usr/bin/env python2@/usr/bin/python2@g' yledl/yledl.py
 
 %build
-sed -i 's|/usr/local/share/yle-dl/AdobeHDS.php|/usr/share/yle-dl/AdobeHDS.php|g' %{_builddir}/%{name}-%{version}/yle-dl
+%py2_build
 
 %install
-rm -rf %{buildroot}
-mkdir -p %{buildroot}/%{_docdir}
-mkdir -p %{buildroot}/%{_datadir}/%{name}
-make DESTDIR=%{buildroot} prefix=%{_usr}  install
+%py2_install
+chmod a+x %{buildroot}%{python2_sitelib}/yledl/yledl.py
 
 %files
-%defattr(-,root,root)
-%doc ChangeLog COPYING README.md README.fi
+%doc ChangeLog README.md README.fi
+%license COPYING
 %{_bindir}/yle-dl
-%{_datadir}/%{name}
+%{python2_sitelib}/yledl/
+%{python2_sitelib}/yle_dl-%{version}-py2.7.egg-info/
 
 
 %changelog
+* Sun Oct 08 2017 Leigh Scott <leigh123linux@googlemail.com> - 2.24-1
+- Update to 2.24
+- Clean up spec file
+
 * Thu Aug 31 2017 RPM Fusion Release Engineering <kwizart@rpmfusion.org> - 2.13-3
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_27_Mass_Rebuild
 
