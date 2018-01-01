@@ -1,5 +1,5 @@
 Name:		yle-dl
-Version:	2.24
+Version:	2.30
 Release:	1%{?dist}
 License:	GPLv3
 Summary:	Command-line tool to download videos from Finnish broadcasting company
@@ -53,6 +53,9 @@ chmod a+x %{buildroot}%{python2_sitelib}/yledl/yledl.py
 
 
 %changelog
+* Mon Jan 01 2018 Sérgio Basto <sergio@serjux.com> - 2.30-1
+- Update to 2.30
+
 * Sun Oct 08 2017 Leigh Scott <leigh123linux@googlemail.com> - 2.24-1
 - Update to 2.24
 - Clean up spec file
