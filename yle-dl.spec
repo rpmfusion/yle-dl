@@ -1,6 +1,7 @@
 Name:		yle-dl
-Version:	2.30
-Release:	1%{?dist}
+Epoch:      1
+Version:	2.26
+Release:	2%{?dist}
 License:	GPLv3
 Summary:	Command-line tool to download videos from Finnish broadcasting company
 URL:		http://aajanki.github.io/yle-dl/
@@ -53,6 +54,9 @@ chmod a+x %{buildroot}%{python2_sitelib}/yledl/yledl.py
 
 
 %changelog
+* Tue Jan 23 2018 Leigh Scott <leigh123linux@googlemail.com> - 1:2.26-2
+- Epoch back to 2.26 as python-pyamf isn't available in fedora
+
 * Mon Jan 01 2018 Sérgio Basto <sergio@serjux.com> - 2.30-1
 - Update to 2.30
 
