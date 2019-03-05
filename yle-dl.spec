@@ -1,7 +1,7 @@
 Name:		yle-dl
 Epoch:      1
 Version:	2.26
-Release:	5%{?dist}
+Release:	6%{?dist}
 License:	GPLv3
 Summary:	Command-line tool to download videos from Finnish broadcasting company
 URL:		http://aajanki.github.io/yle-dl/
@@ -54,6 +54,9 @@ chmod a+x %{buildroot}%{python2_sitelib}/yledl/yledl.py
 
 
 %changelog
+* Tue Mar 05 2019 RPM Fusion Release Engineering <leigh123linux@gmail.com> - 1:2.26-6
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_30_Mass_Rebuild
+
 * Sun Aug 19 2018 Leigh Scott <leigh123linux@googlemail.com> - 1:2.26-5
 - Rebuilt for Fedora 29 Mass Rebuild binutils issue
 
